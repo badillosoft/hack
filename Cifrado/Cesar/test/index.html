@@ -7,8 +7,8 @@
 		
 		<link rel="stylesheet" href="main.css">
 		
-		<script src="cesar.js"></script>
-		<script src="demo.js"></script>
+		<script src="../cesar.js"></script>
+		<script src="app.js"></script>
 	</head>
 	<body>
 		<div class="center">
@@ -16,7 +16,7 @@
 			<br>
 			Clave para decifrar el original: <strong id="k_ori">0</strong>
 			<br><br>
-			<textarea id="text" cols="30" rows="10">
+			<textarea id="text">
 En criptografía, el cifrado César, 
 también conocido como cifrado por desplazamiento, 
 código de César o desplazamiento de César, 
@@ -30,8 +30,7 @@ la B sería reemplazada por la E, etc.
 Este método debe su nombre a Julio César,
 que lo usaba para comunicarse con sus generales.
 
-https://es.wikipedia.org/wiki/Cifrado_César
-			</textarea>
+https://es.wikipedia.org/wiki/Cifrado_César</textarea>
 			<br><br>
 			<input type="number" id='k' placeholder="Escribe un número">
 			<button onclick="cifrar()">Cifrar</button>
