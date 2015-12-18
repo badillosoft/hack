@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Alan Badillo Salas | badillo.soft@hotmail.com | @badillosoft-->
+		<meta charset="utf-8">
+		<title>Cifrado César</title>
+		
+		<link rel="stylesheet" href="main.css">
+		
+		<script src="cesar.js"></script>
+		<script src="demo.js"></script>
+	</head>
+	<body>
+		<div class="center">
+			<h1>Cifrado César</h1>
+			<br>
+			Clave para decifrar el original: <strong id="k_ori">0</strong>
+			<br><br>
+			<textarea id="text" cols="30" rows="10">
+En criptografía, el cifrado César, 
+también conocido como cifrado por desplazamiento, 
+código de César o desplazamiento de César, 
+es una de las técnicas de cifrado más simples y más usadas.
+Es un tipo de cifrado por sustitución en el que una letra en
+el texto original es reemplazada por otra letra que se encuentra
+un número fijo de posiciones más adelante en el alfabeto.
+Por ejemplo, con un desplazamiento de 3, la A sería sustituida
+por la D (situada 3 lugares a la derecha de la A ), 
+la B sería reemplazada por la E, etc. 
+Este método debe su nombre a Julio César,
+que lo usaba para comunicarse con sus generales.
+
+https://es.wikipedia.org/wiki/Cifrado_César
+			</textarea>
+			<br><br>
+			<input type="number" id='k' placeholder="Escribe un número">
+			<button onclick="cifrar()">Cifrar</button>
+		</div>
+	</body>
+</html>
