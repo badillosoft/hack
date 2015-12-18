@@ -26,25 +26,26 @@ String.prototype.isSpecialCharacter = function () {
 };
 
 String.prototype.encode = function (k) {
-	k = k || 0;
+	k = k % 26 || 0;
 	
-	k = k % 26;
-	
-	if (k < 0) k = 26 + k;
+	if (k < 0) k += 26;
 	
 	var aux = this.split('');
 	
 	var enc = '';
 	
 	var lowerAlphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-	var upperAlphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
-	//var numbers = '01234567890123456789012345'.split('');
+	var upperAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 	
 	aux.forEach(function (c) {
-		enc = enc + (
-			c.isLowerCase() ? lowerAlphabet[(lowerAlphabet.indexOf(c) + k) % 26] :
-			(c.isUpperCase() ? upperAlphabet[(upperAlphabet.indexOf(c) + k) % 26] : c)
-		);
+		if (!c.isLowerCase() && !c.isUpperCase()) {
+			enc += c;
+			return;
+		}
+		
+		var arr = c.isLowerCase() ? lowerAlphabet : upperAlphabet;
+		
+		enc += arr[(arr.indexOf(c) + k) % 26];
 	}, enc);
 	
 	return enc;
